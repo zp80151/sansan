@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.huiche</groupId>
+        <groupId>org.sansan</groupId>
         <artifactId>huiche-extra</artifactId>
         <version>1.3.7</version>
     </parent>
@@ -12,7 +12,7 @@
     <artifactId>huiche-sql-builder</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.huiche</groupId>
+            <groupId>org.sansan</groupId>
             <artifactId>huiche-annotation</artifactId>
         </dependency>
         <dependency>

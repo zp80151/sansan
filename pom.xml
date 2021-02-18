@@ -133,57 +133,57 @@
             </dependency>
             <!--内部组件-->
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-annotation</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-core</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-data</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-service</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-dao</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-service-impl</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-web</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-spring-boot-starter</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-sql-builder</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-querydsl-codegen</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.huiche</groupId>
+                <groupId>org.sansan</groupId>
                 <artifactId>huiche-transfer</artifactId>
                 <version>${huiche.version}</version>
             </dependency>
