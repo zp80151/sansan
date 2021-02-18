@@ -50,7 +50,7 @@
         <inject.version>1.0.3</inject.version>
     </properties>
     <scm>
-        <url>https://github.com/jmjlbmn/huiche</url>
+        <url>https://github.com/zp80151/sansan</url>
     </scm>
     <repositories>
         <repository>
