@@ -271,13 +271,10 @@
                 </plugins>
             </build>
             <distributionManagement>
-                <snapshotRepository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
                 <repository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <id>github</id>
+                    <name>GitHub zp80151 Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/zp80151/sansan</url>
                 </repository>
             </distributionManagement>
         </profile>
