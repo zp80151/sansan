@@ -18,21 +18,6 @@
         <module>huiche-web</module>
         <module>huiche-extra</module>
     </modules>
-    <name>sansan</name>
-    <description>sansan framework Powered by spring-boot and querydsl</description>
-    <url>https://github.com/zp80151/sansan.git</url>
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-        </license>
-    </licenses>
-    <developers>
-        <developer>
-            <name>zp80151</name>
-            <email>2223901539@qq.com</email>
-        </developer>
-    </developers>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,10 +33,8 @@
         <reflections.version>0.9.12</reflections.version>
         <guava.version>29.0-jre</guava.version>
         <inject.version>1.0.3</inject.version>
+        <github.global.server>github</github.global.server>
     </properties>
-    <scm>
-        <url>https://github.com/zp80151/sansan</url>
-    </scm>
     <repositories>
         <repository>
             <id>aliyun</id>
@@ -191,11 +174,6 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <optional>true</optional>
@@ -205,25 +183,70 @@
             <artifactId>annotations</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.4.7</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+        </dependency>
+
     </dependencies>
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <!--                    把test-one改成你自己的项目-->
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/sansan</altDeploymentRepository>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version >0.12</version>
+                <configuration>
+                    <message >Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <!--                    这个test-one和altDeploymentRepository中的对应-->
+                    <outputDirectory>${project.build.directory}/sansan</outputDirectory><!--本地jar地址-->
+                    <!--                    分支说是要refs/heads/开头-->
+                    <branch>refs/heads/master</branch><!--分支的名称-->
+                    <merge>true</merge>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                    <!--对应github上创建的仓库名称 name-->
+                    <repositoryName>sansan</repositoryName>
+                    <!--github 仓库所有者即登录用户名-->
+                    <repositoryOwner>zp80151</repositoryOwner>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+
     <profiles>
         <profile>
             <id>huicheDeploy</id>
